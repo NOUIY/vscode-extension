@@ -30,7 +30,7 @@ import {
 import { type GlobalLsKeyValue, LS_GLOBAL_KEY } from './serverSettingsToLspConfigurationParam';
 import { HtmlSettingsData } from '../views/workspaceConfiguration/types/workspaceConfiguration.types';
 
-export interface SettingsEntry {
+interface SettingsEntry {
   /** VS Code setting key. undefined for LS-only settings (token, sendErrorReports, etc). */
   vscodeKey?: string;
   /** Extracts the outbound LS value from IConfiguration. May be async. */
@@ -206,7 +206,7 @@ export const SETTINGS_REGISTRY: Record<GlobalLsKeyValue, SettingsEntry> = {
 // ── Derived maps ─────────────────────────────────────────────────────
 
 /** LS key → VS Code setting key (only entries with vscodeKey). */
-export const LS_KEY_TO_VSCODE_KEY: Readonly<Record<string, string>> = (() => {
+const LS_KEY_TO_VSCODE_KEY: Readonly<Record<string, string>> = (() => {
   const map: Record<string, string> = {};
   for (const [lsKey, entry] of Object.entries(SETTINGS_REGISTRY)) {
     if (entry.vscodeKey) {

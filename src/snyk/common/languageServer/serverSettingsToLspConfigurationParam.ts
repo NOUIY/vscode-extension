@@ -40,7 +40,7 @@ export const LS_GLOBAL_KEY = {
   secureAtInceptionExecutionFreq: 'secure_at_inception_execution_frequency',
 } as const;
 
-export const LS_FOLDER_KEY = {
+const LS_FOLDER_KEY = {
   additionalEnvironment: 'additional_environment',
   preferredOrg: 'preferred_org',
   autoDeterminedOrg: 'auto_determined_org',

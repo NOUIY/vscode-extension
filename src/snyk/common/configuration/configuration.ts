@@ -54,7 +54,7 @@ export type FeaturesConfiguration = {
   secretsEnabled: boolean | undefined;
 };
 
-export type ScanCommandConfig = {
+type ScanCommandConfig = {
   preScanCommand: string;
   preScanOnlyReferenceFolder: boolean;
   postScanCommand: string;
@@ -163,7 +163,7 @@ export const DEFAULT_ISSUE_VIEW_OPTIONS: IssueViewOptions = {
 
 export const DEFAULT_RISK_SCORE_THRESHOLD = 0; // Should match value in package.json.
 
-export interface SeverityFilter {
+interface SeverityFilter {
   critical: boolean;
   high: boolean;
   medium: boolean;
